@@ -18,7 +18,7 @@ let labelList = [
 ]
 
 function preload() {
-    data = loadJSON('https://raw.githubusercontent.com/jaksik/ColorClassifer-TensorFlow.js/master/colorData.json');
+    data = loadJSON('https://raw.githubusercontent.com/CodingTrain/ColorClassifer-TensorFlow.js/master/colorData.json');
 }
 
 function setup() {
