@@ -1,4 +1,4 @@
-https://jaksik.github.io/ML-color-classifier/
+https://jaksik.github.io/ml-color-classifier/
 
 A "Hello World" app using Tensorflow JS to train a model to predict a specified color.
 When the page is loaded the model automatically starts training its self to associate a color name with certain RGB values.
