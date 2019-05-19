@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
 
 
-    <script src="app.js"></script>
 
     <title>Document</title>
 </head>
@@ -21,5 +20,19 @@
 <strong>This project was inspired by "The Coding Train" from NYU</strong>
 <p>Use the sliders to create your own rgb value (over 7 million possibilities) which will be displayed on the canvas.</p><br/>
 <button onclick="train()">Train Model</button><br/><br/>
+<div id="console">
+    <div class="slidecontainer">
+        <p>Custom range slider:</p>
+        <input type="range" min="1" max="250" value="50" class="slider" id="rSlider">
+        <p>R Value: <span id="rValue"></span></p>
+        <input type="range" min="1" max="250" value="50" class="slider" id="gSlider" onchange="myFunction()">
+        <p>G Value: <span id="gValue"></span></p>
+        <input type="range" min="1" max="250" value="50" class="slider" id="bSlider" onchange="myFunction()">
+        <p>B Value: <span id="bValue"></span></p>
+      </div>
+
+</div>
+<script src="./logic.js"></script>
+
 </body>
 </html>
