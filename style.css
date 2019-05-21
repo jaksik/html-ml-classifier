@@ -1,34 +1,59 @@
-.slidecontainer {
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+}
+
+#wrapper {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 960px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2, h4 {
+    text-align: center;
+}
+
+#console {
+    text-align: center;
+    border: 3px solid black;
+}
+
+#canvas {
+    min-height: 200px;
+}
+
+#sliderContainer {
+    width: 20%;
+}
+
+.slider {
     width: 100%;
-  }
-  
-  .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 25px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider:hover {
-    opacity: 1;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
-    cursor: pointer;
-  }
+}
+
+#train-btn {
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    #train-btn {
+        width: 80%;
+    }
+
+    #canvas {
+        min-height: 150px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #canvas {
+        min-height: 100px;
+    }
+}
