@@ -31,18 +31,23 @@ function setup() {
   let labels = [];
   for (let record of data.entries) {
     let col = [record.r / 255, record.g / 255, record.b / 255];
-    //pushing RGB values to array
+    //pushing color's RGB value to colors array
     colors.push(col);
-    //pushing RGB labels to array with as index value
+    //pushing the corresponding labeshing colors arrayl index from the labelList to the labels array
     labels.push(labelList.indexOf(record.label));
   }
-  // creating a 2d tensor
+
+
+
+  // --passing colors array into tf.tensor2d
   xs = tf.tensor2d(colors);
 
   let labelsTensor = tf.tensor1d(labels, 'int32');
   labelsTensor.print();
 
+
   ys = tf.oneHot(labelsTensor, 9);
+  // disposing of used data to prevent lag
   labelsTensor.dispose();
 
   console.log(xs.shape);
@@ -51,13 +56,18 @@ function setup() {
   xs.print();
   ys.print();
 
+
+  //Creating our machine learning model
   model = tf.sequential();
 
+  //Structuring the input
   let hidden = tf.layers.dense({
     units: 16,
     activation: 'sigmoid',
     inputDim: 3
   });
+
+  //Structuring the output
   let output = tf.layers.dense({
     units: 9,
     activation: 'softmax'
@@ -65,7 +75,7 @@ function setup() {
   model.add(hidden);
   model.add(output);
 
-  //create optimizer
+  //Creating an optimizer to help train our model
   const lr = 0.2;
   const optimizer = tf.train.sgd(lr);
 
@@ -75,7 +85,7 @@ function setup() {
   });
 }
 
-//Actually training our model, programmed for 10 epochs
+//Training our model, programmed for 10 epochs
 function train() {
   const options = {
       epochs: 10,
@@ -110,8 +120,9 @@ function draw() {
 }
 
 
-//slider value change event listener
 
+
+//Listening to value changes on our R, G, B sliders
 var rSlider = document.getElementById("rSlider");
 var gSlider = document.getElementById("gSlider");
 var bSlider = document.getElementById("bSlider");
