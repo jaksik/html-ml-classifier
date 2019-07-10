@@ -1,7 +1,7 @@
 # Machine Learning Color Classifier
 ### Built with TensorFlow JS
 
-[Demo The App](https://jaksik.github.io/ml-color-classifier/)
+[Demo The App](https://jaksik.github.io/html-ml-classifier/)
 
 ## How It Works
 1. After the user clicks the "Train and Predict" button, the application will begin training on a data set of over 5,000 random RGB values each associated with 1 of 9 different colors (Red, Green, Blue, Orange, Yello, Pink, Purple, Brown, Grey). 
